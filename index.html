@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VectorLab — Vectores y Leyes de Newton</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <svg class="logo-mark" viewBox="0 0 26 26" fill="none">
+        <line x1="3" y1="23" x2="20" y2="6" stroke="#E4572E" stroke-width="2.4" stroke-linecap="round"/>
+        <polygon points="20,6 14,7.5 18.5,10.5" fill="#E4572E"/>
+        <line x1="3" y1="23" x2="23" y2="23" stroke="#1E2A44" stroke-width="1.4"/>
+        <line x1="3" y1="23" x2="3" y2="3" stroke="#1E2A44" stroke-width="1.4"/>
+      </svg>
+      FisicaViva
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#top" class="current">Inicio</a></li>
+      <li><a href="#modulos">Módulos</a></li>
+      <li><a href="#laboratorio">Laboratorio</a></li>
+      <li><a href="#detective">Detective</a></li>
+      <li><a href="#quiz">Evaluación</a></li>
+      <li><a href="#progreso">Mi progreso</a></li>
+      <li><a href="about.html">Sobre nosotros</a></li>
+    </ul>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="nav-progress-btn">◐ Mi progreso</button>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="bg-particles" id="bgParticles"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Física mecánica · Nivel bachillerato</span>
+        <h1>Aprende a trazar <em>cada fuerza</em> antes de calcularla</h1>
+        <p class="lead">Domina los vectores y las tres leyes de Newton con simulaciones que respondes con la mano, no solo con la fórmula: arrastra fuerzas, arma diagramas de cuerpo libre y detecta las leyes en la vida real.</p>
+        <div class="cta-row">
+          <a href="#modulos" class="btn btn-primary">Comenzar ahora →</a>
+          <a href="#laboratorio" class="btn btn-ghost">Ir al laboratorio</a>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><div class="num" data-count="6">0</div><div class="lbl">Módulos</div></div>
+          <div class="stat"><div class="num" data-count="4">0</div><div class="lbl">Herramientas interactivas</div></div>
+          <div class="stat"><div class="num" data-count="3150">0</div><div class="lbl">Estudiantes</div></div>
+          <div class="stat"><div class="num">Básico → Avanzado</div><div class="lbl">Nivel</div></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="tag"><span>DIAGRAMA · SUMA DE VECTORES</span><span>F₁ + F₂ = R</span></div>
+        <svg viewBox="0 0 340 260">
+          <line x1="20" y1="230" x2="320" y2="230" stroke="#1E2A44" stroke-width="1" opacity="0.25"/>
+          <line x1="20" y1="230" x2="20" y2="20" stroke="#1E2A44" stroke-width="1" opacity="0.25"/>
+          <defs>
+            <marker id="arrowOrange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#E4572E"/></marker>
+            <marker id="arrowTeal" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2F7A6B"/></marker>
+            <marker id="arrowInk" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#1E2A44"/></marker>
+          </defs>
+          <g class="fv1">
+            <line class="fv-draw" x1="20" y1="230" x2="180" y2="230" stroke="#E4572E" stroke-width="3" marker-end="url(#arrowOrange)"/>
+            <text x="90" y="248" font-family="IBM Plex Mono" font-size="12" fill="#E4572E">F₁ = 40 N</text>
+          </g>
+          <g class="fv2">
+            <line class="fv-draw" x1="180" y1="230" x2="180" y2="90" stroke="#2F7A6B" stroke-width="3" marker-end="url(#arrowTeal)"/>
+            <text x="188" y="165" font-family="IBM Plex Mono" font-size="12" fill="#2F7A6B">F₂ = 30 N</text>
+          </g>
+          <g class="fvr">
+            <line class="fv-draw" x1="20" y1="230" x2="180" y2="90" stroke="#1E2A44" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#arrowInk)"/>
+            <text x="55" y="150" font-family="IBM Plex Mono" font-size="12" fill="#1E2A44">R = 50 N</text>
+          </g>
+        </svg>
+        <div class="vec-readout">
+          <div><b>50 N</b>Magnitud resultante</div>
+          <div><b>36.9°</b>Ángulo respecto a F₁</div>
+          <div><b>3-4-5</b>Triángulo notable</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODULOS ================= -->
+  <section id="modulos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="tag-label">Módulos de aprendizaje</span>
+          <h2>De la flecha en el papel a la fuerza real</h2>
+          <p>Seis módulos organizados en dos bloques: fundamentos de vectores y las tres leyes de Newton.</p>
+        </div>
+      </div>
+
+      <div class="mod-grid">
+        <div class="mod-card reveal">
+          <span class="cat cat-vec">Vectores</span>
+          <span class="mod-time">20 min</span>
+          <h3>Magnitud y dirección</h3>
+          <p>Qué es un vector, cómo se representa gráficamente y en qué se diferencia de una cantidad escalar.</p>
+          <div class="mod-foot">
+            <div class="progress-track"><div class="progress-fill" data-width="70%"></div></div>
+            <span class="mod-status">70%</span>
+          </div>
+        </div>
+
+        <div class="mod-card reveal">
+          <span class="cat cat-vec">Vectores</span>
+          <span class="mod-time">30 min</span>
+          <h3>Suma y resta de vectores</h3>
+          <p>Método gráfico (punta-cola) y método analítico por componentes para combinar dos o más vectores.</p>
+          <div class="mod-foot">
+            <div class="progress-track"><div class="progress-fill" data-width="30%"></div></div>
+            <span class="mod-status">30%</span>
+          </div>
+        </div>
+
+        <div class="mod-card reveal">
+          <span class="cat cat-vec">Vectores</span>
+          <span class="mod-time">25 min</span>
+          <h3>Componentes rectangulares</h3>
+          <p>Descompón cualquier vector en sus ejes X e Y usando seno, coseno y el teorema de Pitágoras.</p>
+          <div class="mod-foot">
+            <div class="progress-track"><div class="progress-fill" data-width="0%"></div></div>
+            <span class="mod-status">Sin iniciar</span>
+          </div>
+        </div>
+
+        <div class="mod-card reveal">
+          <span class="cat cat-newton">Leyes de Newton</span>
+          <span class="mod-time">20 min</span>
+          <h3>Primera ley: Inercia</h3>
+          <p>Por qué todo objeto resiste cambiar su estado de movimiento a menos que actúe una fuerza neta.</p>
+          <div class="mod-foot">
+            <div class="progress-track"><div class="progress-fill done" data-width="100%"></div></div>
+            <span class="mod-status">Completado ✓</span>
+          </div>
+        </div>
+
+        <div class="mod-card reveal">
+          <span class="cat cat-newton">Leyes de Newton</span>
+          <span class="mod-time">35 min</span>
+          <h3>Segunda ley: F = m·a</h3>
+          <p>La relación entre fuerza, masa y aceleración, con ejemplos que puedes simular tú mismo.</p>
+          <div class="mod-foot">
+            <div class="progress-track"><div class="progress-fill" data-width="50%"></div></div>
+            <span class="mod-status">50%</span>
+          </div>
+        </div>
+
+        <div class="mod-card reveal">
+          <span class="cat cat-newton">Leyes de Newton</span>
+          <span class="mod-time">25 min</span>
+          <h3>Tercera ley: Acción y reacción</h3>
+          <p>Todo par de fuerzas es mutuo: por qué nunca puedes empujar algo sin que te empuje de vuelta.</p>
+          <div class="mod-foot">
+            <div class="progress-track"><div class="progress-fill" data-width="0%"></div></div>
+            <span class="mod-status">Sin iniciar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALERÍA DE ILUSTRACIONES ================= -->
+  <section id="galeria">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="tag-label">Newton en la vida real</span>
+          <h2>Cuatro escenas, cuatro principios</h2>
+          <p>Ilustraciones propias en estilo plano técnico: cada una fija una idea clave antes de pasar al simulador.</p>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card reveal">
+          <img src="img/newton.jpg" alt="Ilustración de Newton bajo el árbol con la manzana cayendo y el vector de gravedad" loading="lazy">
+          <div class="gallery-caption"><h4>La manzana y la gravedad</h4><p>El origen simbólico de la idea de fuerza como vector.</p></div>
+        </div>
+        <div class="gallery-card reveal">
+          <img src="img/inercia.jpg" alt="Ilustración de un carrito que frena y una caja que continúa por inercia" loading="lazy">
+          <div class="gallery-caption"><h4>Frenar de golpe</h4><p>Por qué la carga sigue moviéndose: Primera Ley.</p></div>
+        </div>
+        <div class="gallery-card reveal">
+          <img src="img/cohete.jpg" alt="Ilustración de un cohete mostrando el par de fuerzas de acción y reacción" loading="lazy">
+          <div class="gallery-caption"><h4>Despegue de un cohete</h4><p>Acción abajo, reacción arriba: Tercera Ley.</p></div>
+        </div>
+        <div class="gallery-card reveal">
+          <img src="img/vector.jpg" alt="Ilustración de una rosa de vectores con distintos ángulos sobre un transportador" loading="lazy">
+          <div class="gallery-caption"><h4>Representación de Vectores en el Plano</h4><p>Vectores de igual magnitud con diferente dirección y sentido, medidos mediante un transportador.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LABORATORIO ================= -->
+  <section id="laboratorio">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="tag-label">Laboratorio interactivo</span>
+          <h2>Simuladores y herramientas propias</h2>
+          <p>Dos simuladores clásicos y dos herramientas exclusivas de VectorLab que no vas a encontrar en un libro de texto.</p>
+        </div>
+      </div>
+
+      <!-- SIM 1: vector adder -->
+      <div class="lab-block reveal">
+        <div class="lab-info">
+          <h3>Sumador de vectores</h3>
+          <p>Ajusta magnitud y ángulo de dos vectores de fuerza y observa cómo cambia el vector resultante en tiempo real.</p>
+          <div class="control">
+            <label>Vector F₁ · magnitud <b id="m1out">40 N</b></label>
+            <input type="range" id="m1" min="0" max="100" value="40">
+          </div>
+          <div class="control">
+            <label>Vector F₁ · ángulo <b id="a1out">0°</b></label>
+            <input type="range" id="a1" min="0" max="360" value="0">
+          </div>
+          <div class="control">
+            <label>Vector F₂ · magnitud <b id="m2out">30 N</b></label>
+            <input type="range" id="m2" min="0" max="100" value="30">
+          </div>
+          <div class="control">
+            <label>Vector F₂ · ángulo <b id="a2out">90°</b></label>
+            <input type="range" id="a2" min="0" max="360" value="90">
+          </div>
+        </div>
+        <div class="lab-visual">
+          <svg id="vecSvg" viewBox="0 0 300 300"></svg>
+          <div class="readout-row">
+            <div class="readout"><div class="rlabel">Resultante</div><div class="rval" id="resMag">50.0 N</div></div>
+            <div class="readout"><div class="rlabel">Ángulo</div><div class="rval" id="resAng">36.9°</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIM 2: F=ma -->
+      <div class="lab-block reveal">
+        <div class="lab-info">
+          <h3>Segunda ley en acción</h3>
+          <p>Cambia la fuerza aplicada y la masa del bloque: mira cómo responde la aceleración según F = m·a.</p>
+          <div class="control">
+            <label>Fuerza aplicada <b id="Fout">120 N</b></label>
+            <input type="range" id="Fin" min="10" max="500" value="120">
+          </div>
+          <div class="control">
+            <label>Masa del bloque <b id="Mout">20 kg</b></label>
+            <input type="range" id="Min" min="1" max="100" value="20">
+          </div>
+          <div class="lab-buttons">
+            <button class="btn-sm active" id="playBtn">▶ Iniciar</button>
+            <button class="btn-sm" id="resetBtn">↺ Reiniciar</button>
+          </div>
+        </div>
+        <div class="lab-visual">
+          <div class="track"><div class="box-mover" id="mover"></div></div>
+          <div class="readout-row">
+            <div class="readout"><div class="rlabel">Aceleración</div><div class="rval" id="accOut">6.00 m/s²</div></div>
+            <div class="readout"><div class="rlabel">F = m·a</div><div class="rval" id="feqOut">120 = 20 × 6.00</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INNOVATIVE TOOL 1: DCL builder -->
+      <div class="lab-block reveal">
+        <div class="lab-info">
+          <h3>Constructor de diagramas de cuerpo libre <span class="badge-new">Exclusivo</span></h3>
+          <p>Agrega fuerzas sobre un bloque, ajusta su magnitud y VectorLab calcula la fuerza neta al instante: te dice si el cuerpo está en equilibrio (1ª ley) o acelerando (2ª ley).</p>
+          <div class="force-btns">
+            <button class="chip" data-force="Peso" data-angle="270">+ Peso</button>
+            <button class="chip" data-force="Normal" data-angle="90">+ Normal</button>
+            <button class="chip" data-force="Aplicada" data-angle="0">+ Aplicada</button>
+            <button class="chip" data-force="Fricción" data-angle="180">+ Fricción</button>
+            <button class="chip" data-force="Tensión" data-angle="45">+ Tensión</button>
+          </div>
+          <div class="force-list" id="forceList"></div>
+        </div>
+        <div class="lab-visual">
+          <svg id="dclSvg" viewBox="0 0 300 300"></svg>
+          <div class="dcl-verdict eq" id="dclVerdict">Agrega al menos una fuerza para comenzar.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DETECTIVE DE NEWTON ================= -->
+  <section id="detective">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="tag-label">Herramienta exclusiva</span>
+          <h2>Detective de Newton <span class="badge-new">Exclusivo</span></h2>
+          <p>Situaciones cotidianas, una por una. Tu trabajo: identificar qué ley de Newton explica lo que está pasando, antes de que se te acabe la racha.</p>
+        </div>
+      </div>
+
+      <div class="detective-card reveal">
+        <div class="det-score">
+          <span>Racha: <b id="detStreak">0</b></span>
+          <span id="detCounter">Caso 1 / 8</span>
+          <span>Aciertos: <b id="detScore">0</b></span>
+        </div>
+        <div class="det-scenario" id="detScenario">Cargando caso…</div>
+        <div class="det-btns">
+          <button class="det-btn" data-law="1">1ª Ley — Inercia</button>
+          <button class="det-btn" data-law="2">2ª Ley — F = m·a</button>
+          <button class="det-btn" data-law="3">3ª Ley — Acción-reacción</button>
+        </div>
+        <div class="det-feedback" id="detFeedback"></div>
+        <div style="margin-top:16px;">
+          <button class="btn btn-ghost" id="detNext" style="display:none;">Siguiente caso →</button>
+          <button class="btn btn-primary" id="detRestart" style="display:none;">↺ Reiniciar detective</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QUIZ ================= -->
+  <section id="quiz">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="tag-label">Evaluación rápida</span>
+          <h2>Pon a prueba lo aprendido</h2>
+          <p>Cinco preguntas sobre vectores y las leyes de Newton.</p>
+        </div>
+      </div>
+
+      <div class="quiz-card reveal" id="quizCard">
+        <div class="quiz-top"><span id="quizProgress">Pregunta 1 de 5</span><span id="quizTopic">Vectores</span></div>
+        <div class="quiz-q" id="quizQ"></div>
+        <div class="quiz-opts" id="quizOpts"></div>
+        <button class="btn btn-primary quiz-next" id="quizNext">Siguiente →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROGRESO ================= -->
+  <section id="progreso">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="tag-label">Tu avance</span>
+          <h2>Mi progreso</h2>
+          <p>Un resumen de tu trabajo en esta sesión. Se actualiza mientras usas el laboratorio, el detective y la evaluación.</p>
+        </div>
+      </div>
+      <div class="prog-grid reveal">
+        <div class="prog-card"><div class="num" id="progModules">1 / 6</div><div class="lbl">Módulos completados</div></div>
+        <div class="prog-card"><div class="num" id="progQuiz">—</div><div class="lbl">Mejor puntaje evaluación</div></div>
+        <div class="prog-card"><div class="num" id="progDet">0</div><div class="lbl">Mejor racha detective</div></div>
+        <div class="prog-card"><div class="num" id="progDcl">No usado</div><div class="lbl">Constructor DCL</div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>VectorLab · Vectores y Leyes de Newton — hecho para bachillerato</p>
+    <p><a href="about.html">Sobre nosotros ↗</a></p>
+  </div>
+</footer>
+</body>
+
+<!-- Progress modal -->
+<div id="progressModal" class="progress-modal" aria-hidden="true" style="display:none;">
+  <div class="progress-modal-backdrop"></div>
+  <div class="progress-modal-content" role="dialog" aria-modal="true" aria-labelledby="progressModalTitle">
+    <h3 id="progressModalTitle">Mi progreso — Ajustes</h3>
+    <div class="pm-row">
+      <label>Módulos completados (0–6): <input type="number" id="pmModules" min="0" max="6"></label>
+    </div>
+    <div class="pm-row">
+      <label>Mejor puntaje evaluación (0–5, vacío = —): <input type="number" id="pmQuiz" min="0" max="5"></label>
+    </div>
+    <div class="pm-row">
+      <label>Mejor racha detective: <input type="number" id="pmDet" min="0"></label>
+    </div>
+    <div class="pm-row">
+      <label><input type="checkbox" id="pmDcl"> Constructor DCL usado</label>
+    </div>
+    <div class="pm-actions">
+      <button id="pmSave" class="btn btn-primary">Guardar</button>
+      <button id="pmReset" class="btn btn-ghost">Restablecer</button>
+      <button id="pmClose" class="btn">Cerrar</button>
+    </div>
+    <p style="font-size:0.85rem; color:var(--ink-faint); margin-top:8px;">Los cambios se guardan localmente en este navegador.</p>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
